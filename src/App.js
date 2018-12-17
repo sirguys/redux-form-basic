@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import logo from './logo.svg'
+import Form from './components/Form'
 import './App.css'
 
 class App extends Component {
@@ -41,29 +41,26 @@ class App extends Component {
       })
   }
 
+  myCustomSubmit = (values, dispatch) => {
+    console.log('value>>>>', values)
+
+    // Custom dispatch
+    // dispatch({
+    //   type: 'BEFORE_SUBMIT'
+    // })
+
+    // dispatch(createDate(values))
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <form onSubmit={this.onSubmit}>
-          <label>
-            Username:
-            <input type="text" name="username" onChange={this.onChange} />
-          </label>
-
-          <label>
-            Password:
-            <input type="password" name="password" onChange={this.onChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+      <div className="container">
+        <h2 className="title">Redux Form Example</h2>
+        <div className="columns">
+          <div className="column is-12">
+            <Form onSubmit={this.myCustomSubmit} />
+          </div>
+        </div>
       </div>
     )
   }
