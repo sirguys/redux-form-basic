@@ -53,12 +53,18 @@ class App extends Component {
   }
 
   render() {
+    const initial = {
+      name: 'Sarawut Kodkaew',
+      email: 'sirguys.apple@gmail.com',
+      username: 'sirguys',
+      message: 'Hi'
+    }
     return (
       <div className="container">
         <h2 className="title">Redux Form Example</h2>
         <div className="columns">
           <div className="column is-12">
-            <Form onSubmit={this.myCustomSubmit} />
+            <Form onSubmit={this.myCustomSubmit} initialValues={initial} />
           </div>
         </div>
       </div>
