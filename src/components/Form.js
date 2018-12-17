@@ -1,20 +1,30 @@
 import React from 'react'
-import { reduxForm } from 'redux-form'
+import { reduxForm, Field } from 'redux-form'
 
 const Form = () => {
     return (
-        <div className="container">
+        <form>
             <div className="field">
                 <label class="label">Name</label>
                 <div className="control">
-                    <input className="input" type="text" placeholder="Text input" />
+                    <Field
+                        component="input"
+                        placeholder="Text input"
+                        className="input"
+                        name="name"
+                    />
                 </div>
             </div>
 
             <div className="field">
                 <label className="label">Username</label>
                 <div className="control has-icons-left has-icons-right">
-                    <input className="input" type="text" placeholder="Text input" />
+                    <Field
+                        component="input"
+                        placeholder="Text input"
+                        className="input"
+                        name="username"
+                    />
                     <span className="icon is-small is-left">
                         <i className="fas fa-user" />
                     </span>
@@ -27,7 +37,13 @@ const Form = () => {
             <div className="field">
                 <label className="label">Email</label>
                 <div className="control has-icons-left has-icons-right">
-                    <input className="input" type="email" placeholder="Email input" />
+                    <Field
+                        component="input"
+                        placeholder="Email input"
+                        className="input"
+                        name="email"
+                        type="email"
+                    />
                     <span className="icon is-small is-left">
                         <i className="fas fa-envelope" />
                     </span>
@@ -40,19 +56,24 @@ const Form = () => {
             <div className="field">
                 <label className="label">Message</label>
                 <div className="control">
-                    <textarea className="textarea" placeholder="Textarea" />
+                    <Field
+                        component="input"
+                        placeholder="Textarea"
+                        className="textarea"
+                        name="message"
+                    />
                 </div>
             </div>
 
             <div className="field is-grouped">
                 <div className="control">
-                    <button className="button is-link">Submit</button>
+                    <button className="button is-link" type="submit">Submit</button>
                 </div>
                 <div className="control">
                     <button className="button is-text">Cancel</button>
                 </div>
             </div>
-        </div>
+        </form>
     )
 }
 
